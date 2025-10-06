@@ -29,6 +29,8 @@ composer require mcode/mcode
 
 ## Documentation
 
+### Codesniffer
+
 1. Install this package.
 2. Create `ruleset.xml` file.
 
@@ -44,6 +46,30 @@ composer require mcode/mcode
   ```sh
   vendor/bin/phpcs --cache=var/codesniffer.dat --standard=ruleset.xml app
   ```
+
+### Phpstan
+
+1. Install this package.
+2. Create `phpstan.neon` file.
+
+	```neon
+	includes:
+		- vendor/mcode/mcode/src/phpstan.neon
+		- phpstan-baseline.neon
+
+	parameters:
+		level: 9
+		phpVersion: 80200
+
+		tmpDir: %currentWorkingDirectory%/temp/phpstan
+
+		fileExtensions:
+			- php
+			- phpt
+
+		paths:
+			- app
+	```
 
 ## Development
 

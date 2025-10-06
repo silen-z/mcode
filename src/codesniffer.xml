@@ -2,7 +2,7 @@
 <ruleset name="ModernTv">
 	<description>ModernTV</description>
 
-	<config name="php_version" value="70400"/>
+	<config name="php_version" value="80200"/>
 
 	<arg value="p"/>
 	<arg value="s"/>
@@ -305,6 +305,8 @@
 
 				<element value="static constructors"/>
 
+				<element value="magic methods"/>
+
 				<element value="public static abstract methods"/>
 				<element value="public static final methods"/>
 				<element value="public static methods"/>
@@ -321,8 +323,6 @@
 
 				<element value="private static methods"/>
 				<element value="private methods"/>
-
-				<element value="magic methods"/>
 			</property>
 		</properties>
 	</rule>
@@ -389,6 +389,21 @@
 			<property name="maxLinesCountBeforeWithComment" value="1"/>
 			<property name="minLinesCountBeforeWithoutComment" value="1"/>
 			<property name="maxLinesCountBeforeWithoutComment" value="1"/>
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
+		<exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFallbackGlobalName"/>
+		<properties>
+			<property name="allowFullyQualifiedExceptions" value="false"/>
+			<property name="allowFallbackGlobalConstants" value="false"/>
+			<property name="allowFallbackGlobalFunctions" value="false"/>
+			<property name="allowFullyQualifiedGlobalClasses" value="true"/>
+			<property name="allowFullyQualifiedGlobalConstants" value="false"/>
+			<property name="allowFullyQualifiedGlobalFunctions" value="false"/>
+			<property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
+			<property name="allowFullyQualifiedNameForCollidingConstants" value="true"/>
+			<property name="allowFullyQualifiedNameForCollidingFunctions" value="true"/>
+			<property name="searchAnnotations" value="true"/>
 		</properties>
 	</rule>
 	<rule ref="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing">
